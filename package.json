@@ -1,0 +1,11 @@
+{
+  "name": "bisheng-plugin-rax-theme",
+  "version": "0.0.2",
+  "description": "get package.json",
+  "keywords": [
+    "bisheng",
+    "plugin"
+  ],
+  "author": "wssgcg1213",
+  "license": "MIT"
+}
