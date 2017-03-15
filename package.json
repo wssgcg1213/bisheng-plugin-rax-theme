@@ -6,6 +6,9 @@
     "bisheng",
     "plugin"
   ],
+  "scripts": {
+    "prepublish": "babel src -d lib --presets=es2015,react,stage-0"
+  },
   "peerDependencies": {
     "react": "^15.0.0",
     "react-router": "^2.0.0"
@@ -15,5 +18,12 @@
   "dependencies": {
     "jsonml-to-react-element": "^1.0.0",
     "jsonml.js": "^0.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0"
   }
 }
