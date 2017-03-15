@@ -6,6 +6,14 @@
     "bisheng",
     "plugin"
   ],
+  "peerDependencies": {
+    "react": "^15.0.0",
+    "react-router": "^2.0.0"
+  },
   "author": "wssgcg1213",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jsonml-to-react-element": "^1.0.0",
+    "jsonml.js": "^0.1.0"
+  }
 }
