@@ -17,7 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "jsonml-to-react-element": "^1.0.0",
-    "jsonml.js": "^0.1.0"
+    "jsonml.js": "^0.1.0",
+    "nodejieba": "^2.2.4"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
