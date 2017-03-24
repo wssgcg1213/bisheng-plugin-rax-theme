@@ -50,7 +50,14 @@ const componentMap = {
   slider: "rax-slider",
   transition: "universal-transition",
   asyncstorage: "universal-asyncstorage",
-  gotop: "rax-gotop"
+  gotop: "rax-gotop",
+  // inner modules
+  windvane: '@ali/universal-windvane',
+  tracker: '@ali/universal-tracker',
+  user: '@ali/universal-user',
+  spm: '@ali/universal-spm',
+  goldlog: '@ali/universal-goldlog',
+  share: '@ali/universal-share'
 };
 
 // export default doesn't work
