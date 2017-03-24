@@ -18,7 +18,8 @@
   "dependencies": {
     "jsonml-to-react-element": "^1.0.0",
     "jsonml.js": "^0.1.0",
-    "nodejieba": "^2.2.4"
+    "nodejieba": "^2.2.4",
+    "react-router": "^2.8.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",

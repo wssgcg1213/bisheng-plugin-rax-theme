@@ -1,6 +1,7 @@
 import React from 'react';
 import toReactElement from 'jsonml-to-react-element';
 import JsonML from 'jsonml.js/lib/utils';
+const Link = require('react-router/lib/Link');
 
 function isHeading(node) {
   return /h[1-6]/i.test(JsonML.getTagName(node));
@@ -20,6 +21,7 @@ function generateSluggedId(children) {
   return sluggedId;
 }
 
+// add badge
 const componentMap = {
   text: 'rax-text',
   view: "rax-view",
@@ -31,17 +33,17 @@ const componentMap = {
   video: "rax-video",
   grid: "rax-grid",
   multirow: "rax-multirow",
-  scrollview: "rax-scrollview",
-  listview: "rax-listview",
-  recyclerview: "rax-recyclerview",
+  'scroll-view': "rax-scrollview",
+  'list-view': "rax-listview",
+  'recycler-view': "rax-recyclerview",
   tabheader: "rax-tabheader",
   tabbar: "rax-tabbar",
-  textinput: "rax-textinput",
+  'text-input': "rax-textinput",
   switch: "rax-switch",
   calendar: "rax-calendar",
   toast: "rax-toast",
   modal: "rax-modal",
-  refreshcontrol: "rax-refreshcontrol",
+  'refresh-control': "rax-refreshcontrol",
   picture: "rax-picture",
   player: "rax-player",
   countdown: "rax-countdown",
@@ -55,6 +57,15 @@ const componentMap = {
 module.exports = (_, props) => {
   return {
     converters: [
+      // 转换 a 标签为 react-router.Link
+      [node => JsonML.isElement(node) && JsonML.getTagName(node) === 'a', (node, index) => {
+        const to = node[1].href;
+        if (/^(http|\/\/)/.test(to)) {
+          return (<a key={index} href={to} target="_blank" title={node[1].title}>{node[2]}</a>)
+        } else {
+          return (<Link key={index} to={to}>{node[2]}</Link>);
+        }
+      }],
       // 增加 hash 节点标志
       [node => JsonML.isElement(node) && isHeading(node), (node, index) => {
         const npmBase = /alibaba-inc/.test(location.href) ? 'http://web.npm.alibaba-inc.com' : 'https://npm.taobao.org';
