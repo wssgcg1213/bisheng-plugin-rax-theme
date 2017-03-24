@@ -41,7 +41,7 @@ const componentMap = {
   'text-input': "rax-textinput",
   switch: "rax-switch",
   calendar: "rax-calendar",
-  toast: "rax-toast",
+  toast: "universal-toast",
   modal: "rax-modal",
   'refresh-control': "rax-refreshcontrol",
   picture: "rax-picture",
