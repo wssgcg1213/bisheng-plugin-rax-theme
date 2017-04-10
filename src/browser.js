@@ -69,7 +69,7 @@ module.exports = (_, props) => {
         const to = node[1].href;
         if (/^(http|\/\/)/.test(to)) {
           const text = Array.isArray(node[2]) ? node[2][1] : node[2];
-          return (<a key={index} href={to} target="_blank" title={node[1].title}>text</a>)
+          return (<a key={index} href={to} target="_blank" title={node[1].title}>{text}</a>)
         } else {
           return (<Link key={index} to={to}>{node[2]}</Link>);
         }
