@@ -68,7 +68,8 @@ module.exports = (_, props) => {
       [node => JsonML.isElement(node) && JsonML.getTagName(node) === 'a', (node, index) => {
         const to = node[1].href;
         if (/^(http|\/\/)/.test(to)) {
-          return (<a key={index} href={to} target="_blank" title={node[1].title}>{node[2]}</a>)
+          const text = Array.isArray(node[2]) ? node[2][1] : node[2];
+          return (<a key={index} href={to} target="_blank" title={node[1].title}>text</a>)
         } else {
           return (<Link key={index} to={to}>{node[2]}</Link>);
         }
