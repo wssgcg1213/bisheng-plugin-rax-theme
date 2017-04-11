@@ -80,7 +80,7 @@ module.exports = (_, props) => {
         const component = props && props.params && props.params.component;
         const children = JsonML.getChildren(node);
         const sluggedId = generateSluggedId(children);
-        const badge = JsonML.getTagName(node) === 'h1' && component && componentMap[component] ? <a style={{marginLeft: '5px'}} href={`${npmBase}/${componentMap[component]}`} target="_blank"><img src={`${npmBase}/badge/v/${componentMap[component]}.svg`} alt="npm version" height="18" /></a> : null;
+        const badge = JsonML.getTagName(node) === 'h1' && component && componentMap[component] ? <a key={`badge-${index}`} style={{marginLeft: '5px'}} href={`${npmBase}/${componentMap[component]}`} target="_blank"><img src={`${npmBase}/badge/v/${componentMap[component]}.svg`} alt="npm version" height="18" /></a> : null;
         return React.createElement(JsonML.getTagName(node), {
           key: index,
           id: sluggedId,
